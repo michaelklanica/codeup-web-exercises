@@ -19,6 +19,7 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+
 function analyseColor(color) {
     if (color ==="red") {
         return "Roses are red.";
@@ -48,6 +49,7 @@ console.log(analyseColor("cyan"));
 //                  will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -59,6 +61,7 @@ console.log(analyseColor(randomColor));
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
 function analyseAnotherColor(color) {
     switch(color) {
         case "red":
@@ -143,7 +146,6 @@ function calculateTotal(lucky, subTotal) {
 }
 console.log("$" + calculateTotal(2, 45));
 
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -152,6 +154,7 @@ console.log("$" + calculateTotal(2, 45));
  * price before the discount was, and what their price after the discount is.
  */
 //Generate a random number between 0 and 6
+
 var luckyNumber = Math.floor(Math.random() * 6);
 
 var userBill = prompt("Please enter your total bill:");
@@ -159,7 +162,6 @@ userBill = parseFloat(userBill);
 var discountedBill = calculateTotal(luckyNumber, userBill);
 
 alert("Your bill before discount was $" + userBill + ".  Your lucky number was " + luckyNumber + ".  Your final bill is for $" + discountedBill);
-
 
 /**
  * TODO:
