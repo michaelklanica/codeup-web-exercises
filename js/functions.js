@@ -66,6 +66,8 @@ function isTwo(random) {
     }
 }
 
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -90,9 +92,11 @@ function calculateTip (tipPercent, bill) {
  */
 
 var cost = prompt("What is the total bill?");
-var tip = prompt("What percentage is you tip?");
+var tip = prompt("What percentage is your tip?");
+var tipAmount = calculateTip(parseFloat(tip), parseFloat(cost));
 
-console.log(calculateTip(tip, cost));
+alert("You should tip $" + tipAmount.toFixed(2));
+
 
 
 /**
@@ -112,7 +116,7 @@ console.log(calculateTip(tip, cost));
 
 
 function applyDiscount(initialPrice, discPercent) {
-    return (initialPrice * discPercent) + initialPrice;
+    return initialPrice - (initialPrice * discPercent);
 }
 var price = 100;
 var sale = .20;
