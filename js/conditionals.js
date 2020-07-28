@@ -20,7 +20,7 @@
  * console.logging the function's return value
  */
 
-function analyseColor(color) {
+function analyzeColor(color) {
     if (color ==="red") {
         return "Roses are red.";
     } else if (color === "orange") {
@@ -40,7 +40,8 @@ function analyseColor(color) {
     }
 }
 
-console.log(analyseColor("cyan"));
+console.log(analyzeColor("blue"));
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -55,14 +56,14 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-console.log(analyseColor(randomColor));
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-function analyseAnotherColor(color) {
+function analyzeAnotherColor(color) {
     switch(color) {
         case "red":
             return "Blood is red.";
@@ -91,7 +92,7 @@ function analyseAnotherColor(color) {
     }
 }
 
-console.log(analyseAnotherColor(randomColor));
+console.log(analyzeAnotherColor(randomColor));
 
 /**
  * TODO:
@@ -101,7 +102,7 @@ console.log(analyseAnotherColor(randomColor));
  */
 
 var inputColor = prompt("Enter a color.");
-alert(analyseColor(inputColor));
+alert(analyzeColor(inputColor));
 
 /* ########################################################################## */
 
@@ -126,7 +127,7 @@ alert(analyseColor(inputColor));
  */
 
 function calculateTotal(lucky, subTotal) {
-    if (lucky ===0 ) {
+    if (lucky === 0 ) {
         var totalCost = subTotal;
     } else if (lucky === 1) {
         var totalCost = subTotal - (subTotal * .1);
@@ -161,7 +162,7 @@ var userBill = prompt("Please enter your total bill:");
 userBill = parseFloat(userBill);
 var discountedBill = calculateTotal(luckyNumber, userBill);
 
-alert("Your bill before discount was $" + userBill + ".  Your lucky number was " + luckyNumber + ".  Your final bill is for $" + discountedBill);
+alert("Your bill before discount was $" + userBill.toFixed(2) + ".  Your lucky number was " + luckyNumber + ".  Your final bill is for $" + discountedBill);
 
 /**
  * TODO:
