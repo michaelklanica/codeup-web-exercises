@@ -7,7 +7,7 @@
      * 'names'.
      */
 
-    var names = [Mike, Eva, Skye, Louie];
+    var names = ["Mike", "Eva", "Skye", "Louie"];
 
     /**
      * TODO:
@@ -15,13 +15,15 @@
      * array.
      */
 
-
+    console.log(names.length);
 
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+
+
 
     /**
      * TODO:
