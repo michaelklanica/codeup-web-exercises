@@ -60,18 +60,17 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-
-    var firstItem = function (someArray) {
+    const firstItem = function (someArray) {
         return someArray[0];
-    }
+    };
 
-    var secondItem = function (someArray) {
+    const secondItem = function (someArray) {
         return someArray[1];
-    }
+    };
 
-    var lastItem = function (someArray) {
+    const lastItem = function (someArray) {
         return someArray[someArray.length - 1];
-    }
+    };
 
     console.log(firstItem(names));
     console.log(secondItem(names));
