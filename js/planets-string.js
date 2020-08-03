@@ -39,6 +39,8 @@
     planetsString = '<ul>' + planetsString + '</ul>';
     console.log(planetsString);
 
+    // planetsString = "<ul><li>"+planetsArray.join("</li><li>")+"</li></ul>"
+
 
     document.write(planetsString);
 
