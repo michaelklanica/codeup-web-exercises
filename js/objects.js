@@ -32,7 +32,7 @@
         return "Hello from " + this.firstName + " " + this.lastName;
     };
     console.log(person.sayHello());
-
+    console.log(person)
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -58,7 +58,6 @@
         var total = 0;
         if (shopper.amount > 200) {
             discountedAmount = shopper.amount * .12;
-
         }
         total = shopper.amount - discountedAmount;
         console.log(shopper.name + " saved $" + discountedAmount.toFixed(2) + " on a $" + shopper.amount.toFixed(2) + " purchase, for a total of $" + total.toFixed(2));
@@ -149,7 +148,6 @@
         console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName)
     }
 
-
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -160,5 +158,20 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, authorFirstName, authorLastName, booksArray) {
+        var newBook = {
+            title: title,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        }
+        booksArray.push(newBook);
+        return booksArray;
+
+
+    }
+
+    createBook("Dune", "Frank", "Herbert");
 
 })();
