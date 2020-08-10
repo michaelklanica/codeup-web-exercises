@@ -1,0 +1,44 @@
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    text-decoration: underline;
+    color: darkred;
+}
+
+body {
+    background-color: lightskyblue;
+    background-image: url("../img/network.jpg");
+    color: lightyellow;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+
+ul {
+    list-style: square;
+}
+
+table, td, th {
+    border: lightskyblue solid;
+    padding: 5px;
+    margin: 10px;
+    background-color: black;
+    text-align: center;
+}
+
+a:link {
+    color:red;
+}
+
+a:visited {
+    color:yellow;
+}
+
+a:hover {
+    color:lightblue;
+}
+
+a:active {
+    color:lightgreen;
+}
+
