@@ -6,27 +6,40 @@
 </head>
 <body>
     <form method="POST" action="https://request-inspector.glitch.me/">
+
+<!--        email input-->
         <label for="email">Email Address</label>
         <input id="email" type="text" name="email" placeholder="Enter your email address"><br>
+
+<!--        password input-->
         <label for="password">Password</label>
         <input id="password" type="password" name="password" placeholder="Enter your password"><br>
+
+<!--        text-area-->
         <label for="bio">Tell us about yourself.</label><br>
-        <textarea id="bio" name="bio"></textarea><br>
+        <textarea id="bio" name="bio" cols="80" rows="10"></textarea><br>
 
+<!--        radio butttons-->
         <label>How did you hear about us?</label><br>
-        <label><input type="checkbox" name="howDidYouHear" value="billboard">Billboard</label><br>
-        <label><input type="checkbox" name="howDidYouHear" value="radio">Radio</label><br>
-        <label><input type="checkbox" name="howDidYouHear" value="internet">Internet</label><br>
-        <label><input type="checkbox" name="howDidYouHear" value="other">Other</label><br>
+        <label for="billboard">BillBoard</label>
+        <input id="billboard" type="radio" name="howDidYouHear" value="billboard"><br>
+        <label for="radio">Radio Advertisement</label>
+        <input id="radio" type="radio" name="howDidYouHear" value="radio"><br>
+        <label for="internet">Internet</label>
+        <input id="internet" type="radio" name="howDidYouHear" value="internet"><br>
+        <label for="other">Other</label>
+        <input id="other" type="radio" name="howDidYouHear" value="other"><br>
 
+<!--        drop-down menu-->
         <label for="browser">What browser are you using?</label>
         <select id="browser" name="browser">
             <option value="Chrome">Chrome</option>
-            <option value="Explorer">Explorer</option>
+            <option value="FireFox">FireFox</option>
             <option value="Edge">Edge</option>
             <option value="Safari">Safari</option>
         </select><br>
 
+<!--        submit button-->
         <button type="submit">Submit</button>
     </form>
 </body>
