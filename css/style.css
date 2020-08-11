@@ -1,4 +1,4 @@
-h1 {
+#top {
     text-align: center;
 }
 
@@ -18,13 +18,22 @@ ul {
     list-style: square;
 }
 
-table, td, th {
+table {
     border: lightskyblue solid;
-    padding: 5px;
+    padding: 10px;
     margin: 10px;
     background-color: black;
     text-align: center;
 }
+
+th, td, tr {
+    border: lightskyblue solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: black;
+    text-align: center;
+}
+
 
 a:link {
     color:red;
