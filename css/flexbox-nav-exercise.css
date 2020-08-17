@@ -1,34 +1,37 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
 }
-
 nav {
-    background: #D0D0D0;
+    background: #868686;
+    width: 100%;
 }
-
 ul {
     list-style: none;
-    width: 100%;
+    padding: 0;
+    margin: 0;
     display: flex;
+    position: relative;
+}
+nav a {
+    text-decoration: none;
+    color: black;
     font-family: 'Work Sans', sans-serif;
+    display: inline-block;
+    padding: 29px;
+    ;
+}
 
+nav a:hover {
+    background: cornflowerblue;
 }
 
 #logo {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
-    padding: .2em;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a:hover {
+    padding: .2em 0;
+    position: absolute;
 
 }
