@@ -1,37 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Work+Sans&display=swap');
+
 * {
     box-sizing: border-box;
+
 }
 body {
     margin: 0;
+    padding: 0;
+
 }
 nav {
-    background: #868686;
-    width: 100%;
+    background-color: #DDDDDD;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+
+
 }
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    position: relative;
+    margin: 0;
+    padding: 0;
+
 }
-nav a {
-    text-decoration: none;
+li {
+    list-style: none;
+
+}
+a {
     color: black;
-    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
     display: inline-block;
-    padding: 29px;
-    ;
 }
 
-nav a:hover {
-    background: cornflowerblue;
+a:hover {
+    background-color: #3B94D9;
+    color: #DDDDDD;
 }
 
-#logo {
+.nav-left, .nav-right {
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+.nav-left a {
+    padding: 28px;
+}
+
+.nav-right a {
+    padding: 28px;
+}
+
+.nav-center a {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
-    padding: .2em 0;
-    position: absolute;
-
+    padding: .2em;
 }
