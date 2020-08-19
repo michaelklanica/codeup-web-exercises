@@ -2,58 +2,47 @@
 
 * {
     box-sizing: border-box;
-
 }
+
 body {
-    margin: 0;
-    padding: 0;
-
+    font-family: 'Montserrat', sans-serif;              /* changes the font for the entire document */
+    margin: 0;                                          /* removes the default border around the body */
+    background-color: #3B94D9;                          /* changes the background color for the entire document */
 }
+
 nav {
-    background-color: #DDDDDD;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
+    background-color: #848487;                          /* sets the color for the nav bar */
+    display: flex;                                      /* sets 'nav' to flexbox. (this will also remove the space */
+                                                        /* between the 'body' and the top of the browser) */
+    justify-content: space-between;                     /* justifies the child elements ('ul') to 'space between' */
+}
 
+nav li {
+    margin: 1em 0;                                      /* adds margin to top and bottom of 'li' elements */
+    align: center;
+}
+
+nav a {
+    display: inline-block;                              /*   WTF?   */
+    color: black;                                       /* changes text color to black */
+    text-decoration: none;                              /* removes the default underline for links */
+    padding: 10px;                                      /* adds padding around the 'a' elements */
 
 }
+
+nav a:hover {
+    color: #00338b;                                     /* changes the hover color of 'a' element content */
+}
+
 ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-
-}
-li {
-    list-style: none;
-
-}
-a {
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    line-height: 2em;
+    list-style: none;                                   /* removes the default styling associated with 'ul' */
+    padding: 0;                                         /* removes the default styling associated with 'ul' */
+    margin: 0;                                          /* removes the default styling associated with 'ul' */
+    display: flex;                                      /* sets 'ul' to flexbox */
+    justify-content: center;                            /* centers the content inside the 'ul' flexboxes */
 }
 
-a:hover {
-    background-color: #3B94D9;
-    color: #DDDDDD;
-}
-
-.nav-left, .nav-right {
-    font-family: 'Work Sans', sans-serif;
-
-}
-
-.nav-left a {
-    padding: 28px;
-}
-
-.nav-right a {
-    padding: 28px;
-}
-
-.nav-center a {
-    font-family: 'Montserrat', sans-serif;
+.nav-center li a {
     font-size: 3em;
     padding: .2em;
 }
