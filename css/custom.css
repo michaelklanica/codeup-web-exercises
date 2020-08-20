@@ -1,0 +1,17 @@
+
+.jumbotron {
+    background-image: url('../img/pizza.png');
+    padding-left: 0;
+    padding-right: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: #DDDDDD;
+    opacity: .7;
+}
+
+.badge {
+    background-color: #848487;
+    color: white;
+}
