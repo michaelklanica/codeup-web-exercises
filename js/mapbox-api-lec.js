@@ -41,11 +41,11 @@ mapboxgl.accessToken = mapboxToken;
 //     draggable: true,
 // }
 //
+
+
 // var marker = new mapboxgl.Marker(markerOptions)
 //     .setLngLat([-96.8084, 32.7799])
 //     .addTo(map);
-
-
 
 
 // TODO: Experiment with the color, and setting the LngLat
