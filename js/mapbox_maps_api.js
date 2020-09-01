@@ -22,15 +22,15 @@ var map = new mapboxgl.Map({
     zoom: 9// starting zoom
 });
 
-rest.forEach(function(restuarant) {
-    geocode(restuarant.address, mapboxToken)
+rest.forEach(function(restaurant) {
+    geocode(restaurant.address, mapboxToken)
         .then(function (result) {
-            var restuarantMarker = new mapboxgl.Marker()
+            var restaurantMarker = new mapboxgl.Marker()
                 .setLngLat(result)
                 .addTo(map)
-            var restuarantPopup = new mapboxgl.Popup()
-                .setHTML(restuarant.info)
-            restuarantMarker.setPopup(restuarantPopup)
+            var restaurantPopup = new mapboxgl.Popup()
+                .setHTML(restaurant.info)
+            restaurantMarker.setPopup(restaurantPopup)
         });
 })
 
