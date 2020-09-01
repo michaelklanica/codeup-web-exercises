@@ -18,25 +18,19 @@ rest = [restaurant1, restuarant2, restaurant3];
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v10', // stylesheet location
-    center: [-98.4916, 29.4252], // starting position [lng, lat]
-    zoom: 10// starting zoom
+    center: [-98.4916, 29.5], // starting position [lng, lat]
+    zoom: 9// starting zoom
 });
 
 rest.forEach(function(restuarant) {
-    console.log(restuarant.address);
-    console.log(restuarant.info);
     geocode(restuarant.address, mapboxToken)
         .then(function (result) {
-
-
-            var marker = new mapboxgl.Marker()
+            var restuarantMarker = new mapboxgl.Marker()
                 .setLngLat(result)
                 .addTo(map)
-            var restPopup = new mapboxgl.Popup()
+            var restuarantPopup = new mapboxgl.Popup()
                 .setHTML(restuarant.info)
-
-            marker.setPopup(restPopup)
-
+            restuarantMarker.setPopup(restuarantPopup)
         });
 })
 
