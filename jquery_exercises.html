@@ -5,15 +5,51 @@
     <title>Title</title>
 </head>
 <body>
-<!--ADD HTML CODE HERE-->
+<!--ADD HTML CODE <HERE-->
+<div id="music-container">
+    <h1 id="heading1">Favorites bands of the 90s</h1>
+    <p class="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem consequatur culpa,
+        ducimus eos illo illum iste, nesciunt non nostrum nulla odio quaerat quis reprehenderit saepe sunt suscipit, tenetur?</p>
 
+    <ul id="90s-list" class="music-list">
+        <li>Soundgarden</li>
+        <li>Alice in Chains</li>
+        <li>Tool</li>
+        <li>Radiohead</li>
+        <li>Mazzy Star</li>
+        <li>Tricky</li>
+        <li>Catherine Wheel</li>
+        <li>Metallica</li>
+        <li>Slayer</li>
+        <li>Bjork</li>
+    </ul>
+    <h1 id="heading2">Top 10 Favorite Black Metal Bands</h1>
+    <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem consequatur culpa,
+        ducimus eos illo illum iste, nesciunt non nostrum nulla odio quaerat quis reprehenderit saepe sunt suscipit, tenetur?</p>
+    <ul id="black-metal-list" class="music-list">
+        <li>Mayhem</li>
+        <li>Darkthrone</li>
+        <li>Burzum</li>
+        <li>Watain</li>
+        <li>Marduk</li>
+        <li>Funeral Mist</li>
+        <li>Twilight</li>
+        <li>Gorgoroth</li>
+        <li>Deafheaven</li>
+        <li>Wolves in the Throne Roon</li>
+    </ul>
+</div>
+</HERE-->
 
 <!--LOAD JQUERY FILE-->
 <script type="text/javascript" src="js/jquery-2.x-git.js"></script>
 <!--ADD CUSTOM JAVASCRIPT HERE-->
 <script>
 $(document).ready(function() {
-    alert( 'The page has finished loading!' );
+    var content = $('#90s-list').text();
+    alert(content);
+
+
 });
 </script>
 </body>
