@@ -11,7 +11,7 @@
     <p class="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem consequatur culpa,
         ducimus eos illo illum iste, nesciunt non nostrum nulla odio quaerat quis reprehenderit saepe sunt suscipit, tenetur?</p>
 
-    <ul id="90s-list" class="music-list">
+    <ul id="90s-list" class="codeup">
         <li>Soundgarden</li>
         <li>Alice in Chains</li>
         <li>Tool</li>
@@ -26,7 +26,7 @@
     <h1 id="heading2">Top 10 Favorite Black Metal Bands</h1>
     <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem consequatur culpa,
         ducimus eos illo illum iste, nesciunt non nostrum nulla odio quaerat quis reprehenderit saepe sunt suscipit, tenetur?</p>
-    <ul id="black-metal-list" class="music-list">
+    <ul id="black-metal-list" class="metal">
         <li>Mayhem</li>
         <li>Darkthrone</li>
         <li>Burzum</li>
@@ -38,16 +38,30 @@
         <li>Deafheaven</li>
         <li>Wolves in the Throne Roon</li>
     </ul>
+    <h1 id="codeup">Top 10 Favorite Electronic Artists</h1>
+    <p class="para2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto autem consequatur culpa,
+        ducimus eos illo illum iste, nesciunt non nostrum nulla odio quaerat quis reprehenderit saepe sunt suscipit, tenetur?</p>
+    <ul id="elerctonica-list" class="codeup">
+        <li>Aphex Twin</li>
+        <li>Autechre</li>
+        <li>The Orb</li>
+        <li>Bjork</li>
+        <li>Ulver</li>
+        <li>Tricky</li>
+        <li>Portishead</li>
+        <li>DJ Shadow</li>
+        <li>Lustmord</li>
+        <li>Brian Eno</li>
+    </ul>
 </div>
-</HERE-->
+</body>
 
 <!--LOAD JQUERY FILE-->
 <script type="text/javascript" src="js/jquery-2.x-git.js"></script>
 <!--ADD CUSTOM JAVASCRIPT HERE-->
 <script>
 $(document).ready(function() {
-    var content = $('#90s-list').text();
-    alert(content);
+    $('.codeup').css('border','solid 1px red');
 
 
 });
