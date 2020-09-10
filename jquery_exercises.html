@@ -61,16 +61,19 @@
 <!--ADD CUSTOM JAVASCRIPT HERE-->
 <script>
 $(document).ready(function() {
+    $('h1').click(function() {
+        $(this).css('background-color', 'blue');
+    });
 
-    $('li').css('font-size', '20px');
-    $('p').css('color', 'darkgreen');
-    $('h1').css('background-color', 'grey');
-    var content = $('h1').html();
-    alert(content);
+    $('p').dblclick(function() {
+        $(this).css('font-size', '18px');
+    });
 
-    $('li, p, h1').css('text-decoration', 'underline');
-
-
+    $('li').hover(function() {
+        $(this).css('color', 'red');
+    }, function() {
+        $(this).css('color', 'black');
+    });
 
 });
 </script>
