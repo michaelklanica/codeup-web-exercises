@@ -10,19 +10,22 @@
 <script>
     "use strict";
 
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13];
+    var myCode = [];
+
     $(document).keyup(function(event) {
         if (myCode.length < 11) {
-        myCode.push(event.keyCode);
-        console.log(myCode.length);
-        compare(myCode,konamiCode);
+            myCode.push(event.keyCode);
+            compareCodes(myCode, konamiCode);
 
         } else if (myCode.length >= 11) {
-        myCode.push(event.keyCode);
-        myCode.shift();
-        console.log(myCode.length);
+            myCode.push(event.keyCode);
+            myCode.shift();
+            compareCodes(myCode, konamiCode);
         }
+    });
 
-    function compare(x, y) {
+    function compareCodes(x, y) {
         for (var i = 0; i < konamiCode.length; i++) {
             console.log("comparing...");
             if (myCode[i] !== konamiCode[i]) {
@@ -32,15 +35,10 @@
         celebrate();
     }
 
-    });
-    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13];
-    var myCode = [];
-
     function celebrate() {
-        console.log("They Match!!!!");
+        alert("You have added 30 lives!");
     }
-    
-    
+
 </script>
 </body>
 </html>
