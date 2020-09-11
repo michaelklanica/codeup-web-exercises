@@ -41,7 +41,6 @@
     <dd class="invisible">Golden Gate National Recreation Area</dd>
 </dl>
 <button id="btn1">Toggle Answers</button>
-
 <h3>Park #1</h3>
 <ul>
     <li>Fun Fact 1</li>
@@ -76,16 +75,27 @@
             $('dd').toggleClass('invisible');
         });
 
-        $('dt').click(function(event){
+        $('dt').click(function(event) {
             event.preventDefault();
             $(this).toggleClass('highlight');
         });
 
-        $('#btn2').click(function (event) {
+        $('#btn2').click(function(event) {
             event.preventDefault();
             $('ul').each(function() {
                 $(this).children().last().css('background-color', 'yellow');
             });
+        });
+
+        $('h3').click(function(event) {
+            event.preventDefault();
+            $(this).next().each(function() {
+                $(this).children().first().css('font-weight', 'bold');
+            });
+        });
+
+        $('li').click(function(event) {
+           $(this).parent().children().first().css('background-color', 'blue')
         });
 
 
