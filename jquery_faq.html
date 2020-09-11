@@ -40,29 +40,61 @@
     <dt>What is the most-visited national park?</dt>
     <dd class="invisible">Golden Gate National Recreation Area</dd>
 </dl>
-
 <button id="btn1">Toggle Answers</button>
-
-
-
+<h3>Park #1</h3>
+<ul>
+    <li>Fun Fact 1</li>
+    <li>Fun Fact 2</li>
+    <li>Fun Fact 3</li>
+    <li>Fun Fact 4</li>
+</ul>
+<h3>Park #2</h3>
+<ul>
+    <li>Fun Fact 1</li>
+    <li>Fun Fact 2</li>
+    <li>Fun Fact 3</li>
+    <li>Fun Fact 4</li>
+</ul>
+<h3>Park #3</h3>
+<ul>
+    <li>Fun Fact 1</li>
+    <li>Fun Fact 2</li>
+    <li>Fun Fact 3</li>
+    <li>Fun Fact 4</li>
+</ul>
+<button id="btn2">Toggle Answers</button>
 
 
 <script src="js/jquery-2.x-git.js"></script>
 <script>
     "use strict";
     $(document).ready(function() {
+
         $('#btn1').click(function(event) {
             event.preventDefault();
             $('dd').toggleClass('invisible');
         });
 
-        $('dt').click(function(event){
+        $('dt').click(function(event) {
             event.preventDefault();
             $(this).toggleClass('highlight');
         });
 
-    })
+        $('#btn2').click(function() {
+            $('ul').each(function() {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
 
+        $('h3').click(function() {
+            $(this).next().children().css('font-weight', 'bold');
+        });
+
+        $('li').click(function() {
+            $(this).parent().children().first().css('color', 'blue')
+        });
+
+    });
 
 
 
