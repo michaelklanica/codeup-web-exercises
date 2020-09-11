@@ -80,23 +80,18 @@
             $(this).toggleClass('highlight');
         });
 
-        $('#btn2').click(function(event) {
-            event.preventDefault();
+        $('#btn2').click(function() {
             $('ul').each(function() {
                 $(this).children().last().css('background-color', 'yellow');
             });
         });
 
-        $('h3').click(function(event) {
-            event.preventDefault();
-            $(this).next().each(function() {
-                $(this).children().first().css('font-weight', 'bold');
-            });
+        $('h3').click(function() {
+            $(this).next().children().css('font-weight', 'bold');
         });
 
-        $('li').click(function(event) {
-            event.preventDefault();
-            $(this).parent().children().first().css('background-color', 'blue')
+        $('li').click(function() {
+            $(this).parent().children().first().css('color', 'blue')
         });
 
 
