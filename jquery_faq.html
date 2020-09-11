@@ -95,7 +95,8 @@
         });
 
         $('li').click(function(event) {
-           $(this).parent().children().first().css('background-color', 'blue')
+            event.preventDefault();
+            $(this).parent().children().first().css('background-color', 'blue')
         });
 
 
