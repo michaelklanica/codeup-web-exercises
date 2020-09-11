@@ -7,6 +7,10 @@
             visibility: hidden;
         }
 
+        .highlight {
+            background-color: #3B94D9;
+        }
+
     </style>
 </head>
 <body>
@@ -31,9 +35,11 @@
     <dd id="def8">Total recreation visitors to the national parks in 2019: 327,516,619.</dd>
     <dt id="term9">What is the National Park Service budget?</dt>
     <dd id="def9">Fiscal Year (FY) 2014 Enacted: $2.98 billion; FY 2015 Enacted: $2.615 billion; FY 2016 Enacted:$2.851 billion; FY 2017 Enacted: $2.932 billion</dd>
-    <dt id="term10">What is the most-visited national park?/dt>
+    <dt id="term10">What is the most-visited national park?</dt>
     <dd id="def10">Golden Gate National Recreation Area</dd>
 </dl>
+
+<button id="btn1">Toggle Answers</button>
 
 
 
@@ -42,8 +48,21 @@
 <script src="js/jquery-2.x-git.js"></script>
 <script>
     "use strict";
+    $(document).ready(function() {
+        $('#btn1').click(function(event) {
+            event.preventDefault();
+            $('dd').toggle('.invisible');
+        });
 
-    $('dd').addClass('invisible');
+        $('dt').click(function(event){
+            event.preventDefault();
+            $(this).toggleClass('highlight');
+        });
+
+    })
+
+
+
 
 
 </script>
