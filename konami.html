@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery-2.x-git.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event) {
+        if (myCode.length < 11) {
+        myCode.push(event.keyCode);
+        console.log(myCode.length);
+        compare(myCode,konamiCode);
+
+        } else if (myCode.length >= 11) {
+        myCode.push(event.keyCode);
+        myCode.shift();
+        console.log(myCode.length);
+        }
+
+    function compare(x, y) {
+        for (var i = 0; i < konamiCode.length; i++) {
+            console.log("comparing...");
+            if (myCode[i] !== konamiCode[i]) {
+                return;
+            }
+        }
+        celebrate();
+    }
+
+    });
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13];
+    var myCode = [];
+
+    function celebrate() {
+        console.log("They Match!!!!");
+    }
+    
+    
+</script>
+</body>
+</html>
