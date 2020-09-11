@@ -14,6 +14,12 @@
     </style>
 </head>
 <body>
+
+<div class="sign-up">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span class="toggle-sign-up">X</span>
+</div>
+
 <h1>National Parks FAQ</h1>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
@@ -93,6 +99,18 @@
         $('li').click(function() {
             $(this).parent().children().first().css('color', 'blue')
         });
+
+        $('.toggle-sign-up').click(function() {
+            $('.sign-up').hide();
+        })
+
+
+
+
+
+
+
+
 
     });
 
