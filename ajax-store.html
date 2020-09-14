@@ -9,33 +9,80 @@
 
 <table id="products">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
+<input type="button" id="refresh" value="Refresh">
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--<form action="POST">-->
+<!--    <label for="title">Enter a tool</label>-->
+<!--    <input id="new-title" type="text" id="title" name="title">-->
+<!--    <label for="quantity">Enter a quantity</label>-->
+<!--    <input id="new-quantity" type="text" id="quantity" name="quantity">-->
+<!--    <label for="price">Enter a Price</label>-->
+<!--    <input id="new-price" type="text" id="price" name="price">-->
+<!--    <label for="categories">Enter Categories</label>-->
+<!--    <input id="new-categories" type="text" id="categories" name="categories">-->
+<!--    <input type="button" id="addItem" value="Add Item">-->
+<!--</form>-->
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-(function() {
-    "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
-    $.ajax("data/inventory.json").done(function(data, status, jqXhr) {
-        alert("AJAX call completed successfully!");
-        console.log("Request status: " + status);
-        console.log("Data returned from server:");
-        console.log(data);
-    });
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        // TODO: Take the data from inventory.json and append it to the products table
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+        function loadInventory() {
+            $.get("data/inventory.json").done(function (data) {
+                $('#insertProducts').empty();
+                data.forEach(function (item) {
+                    $('#insertProducts').append(
+                        "<tr><td>" + item.title + "</td><td>" + item.quantity + "</td><td>" + item.price + "</td><td>" +
+                        item.categories + "</td></tr>"
+                    );
+                })
+            });
+        }
+
+        loadInventory();
+
+        $('#refresh').click(function () {
+            loadInventory();
+        })
+
+
+        // $('#addItem').click(function () {
+        //     var newTitle = $('#new-title').val();
+        //     var newQuantity = $('#new-quantity').val();
+        //     var newCategories = $('#new-categories').val();
+        //     var newPrice = $('#new-price').val();
+        //
+        //     console.log(newTitle, newQuantity, newPrice, newCategories);
+        //
+        //
+        //     $.post("data/inventory.json", {
+        //         title: newTitle,
+        //         quantity: newQuantity,
+        //         categories: newCategories,
+        //         price: newPrice
+        //     }).done(function (data) {
+        //         // need code to add tool
+        //     });
+        // });
+
+
+    })();
 </script>
 
 </body>
