@@ -11,12 +11,18 @@
             background-color: #3B94D9;
         }
 
+        .hide {
+            display: none;
+        }
+
+
     </style>
 </head>
 <body>
+<h2>Register for updates</h2>
 
 <div class="sign-up">
-    <h1>Would you like to sign up for our newsletter?</h1>
+    <h1 id="updates" class="hide">Would you like to sign up for our newsletter?</h1>
     <span class="toggle-sign-up">X</span>
 </div>
 
@@ -50,21 +56,21 @@
 </dl>
 <button id="btn1">Toggle Answers</button>
 <h3>Park #1</h3>
-<ul style="display: none">
+<ul class="hide" style="display: none">
     <li>Fun Fact 1</li>
     <li>Fun Fact 2</li>
     <li>Fun Fact 3</li>
     <li>Fun Fact 4</li>
 </ul>
 <h3>Park #2</h3>
-<ul style="display: none">
+<ul class="hide" style="display: none">
     <li>Fun Fact 1</li>
     <li>Fun Fact 2</li>
     <li>Fun Fact 3</li>
     <li>Fun Fact 4</li>
 </ul>
 <h3>Park #3</h3>
-<ul style="display: none">
+<ul class="hide" style="display: none">
     <li>Fun Fact 1</li>
     <li>Fun Fact 2</li>
     <li>Fun Fact 3</li>
@@ -110,6 +116,7 @@
            $(this).next().slideToggle();
         });
 
+        $('#updates').delay(8000).fadeIn();
 
 
 
