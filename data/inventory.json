@@ -33,6 +33,14 @@
       "tool"
     ],
     "price": 10
+  },
+  {
+    "title": "Wrenches",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 15
   }
 
 ]
