@@ -37,18 +37,20 @@
     "use strict";
     (function () {
 
-        $('#locaBtn').click(function () {
+        $('#locaBtn').click(function () { // when button is clicked user input is stored in 'city' variable
             var city = $('#city').val();
-            console.log(city);
 
-            $.get("http://api.openweathermap.org/data/2.5/weather", {
+            console.log(city); // TESTING
+
+            $.get("http://api.openweathermap.org/data/2.5/weather", { // get current weather data for 'city'
                 APPID: openWeatherKey,
                 q: city,
                 units: "imperial"
             }).done(function (data) {
 
-                console.log(data.main.temp);
-                $('#todays-weather').append(
+                console.log(data.main.temp); //TESTING
+
+                $('#todays-weather').append(    // add data to webpage
                     "<p>" + data.main.temp + "</p>"
                 );
             });
