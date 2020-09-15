@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
 <div class="container">
+    <div class="row">
+        <div id="location" class="col-12 d-flex justify-content-center">
+            <div id='map' style='width: 90%; height: 400px;'></div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-6">
             <h1>Weather App</h1>
@@ -34,9 +41,24 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+
 <script>
     "use strict";
     (function () {
+
+        // Render Map
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-74.5, 40], // starting position [lng, lat]
+            zoom: 9 // starting zoom
+        });
+
+
+
 
         $('#locaBtn').click(function () { // when button is clicked user input is stored in 'city' variable
             var city = $('#city').val();
