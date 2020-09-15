@@ -7,41 +7,19 @@
     <title>Weather Map Project</title>
 </head>
 <body>
+<header>
+    <h1>Weather App</h1>
+</header>
+<div id="current-weather"></div>
+<div id="five-day-forecast"></div>
+
+
+
 
 <script src="js/jquery-2.x-git.js"></script>
 <script src="js/keys.js"></script>
-<script>
-    "use strict";
-    (function () {
+<script src="js/weather_map.js"></script>
 
-        let locationCoord = [-98.4916, 29.4260];
-        console.log(locationCoord);
-
-
-        // Gather Current Weather
-        $.get("https://api.openweathermap.org/data/2.5/weather",
-            {
-                APPID: openWeatherKey,
-                lon: locationCoord[0],
-                lat: locationCoord[1],
-                units: "imperial"
-            }).done(function (currentWeather) {
-            console.log(currentWeather);
-        })
-        // Gather 5-Day Forecast
-        $.get("http://api.openweathermap.org/data/2.5/forecast",
-            {
-                APPID: openWeatherKey,
-                lon: locationCoord[0],
-                lat: locationCoord[1],
-                units: "imperial"
-            }).done(function (forecastWeather) {
-            console.log(forecastWeather);
-        })
-
-
-    })();
-</script>
 </body>
 
 </html>
