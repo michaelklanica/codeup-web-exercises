@@ -7,28 +7,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="css/normalize.css">-->
+    <!--    <link rel="stylesheet" href="css/normalize.css">-->
     <link rel="stylesheet" href="css/weather_map.css">
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
 
 
     <title>Weather Map Project</title>
 </head>
 <body>
 
-<header>
-    <h1>Weather App</h1>
-    <div id="current-weather"></div>
-</header>
+
+<h1>Weather App</h1>
+
+<div id="current-weather"></div>
+
 <div id='map' style='width: 400px; height: 300px;'></div>
-<label for="location">Enter a location:</label>
+
 <input type="text" name="location" id="location" placeholder="Enter a location">
 <input id="locationBtn" type="button" value="Submit">
-<div class="container">
-    <div id="five-day-forecast" class="row justify-content-center"></div>
-</div>
+
+
+<div id="five-day-forecast" class="row justify-content-center"></div>
 
 
 <script src="js/jquery-2.x-git.js"></script>
