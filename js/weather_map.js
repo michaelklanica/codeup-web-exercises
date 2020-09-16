@@ -7,6 +7,7 @@
 
     // Gather Current Weather
     function getCurrentConditions(lon, lat) {
+        $('#current-weather').empty()
         $.get("https://api.openweathermap.org/data/2.5/weather",
             {
                 APPID: openWeatherKey,
@@ -27,6 +28,7 @@
 
     // Gather 5-Day Forecast
     function getFiveDayForecast(lon, lat) {
+        $('#five-day-forecast').empty();
         $.get("http://api.openweathermap.org/data/2.5/forecast",
             {
                 APPID: openWeatherKey,
@@ -58,6 +60,21 @@
         center: [-98.4916, 29.4260], // starting position [lng, lat]
         zoom: 0 // starting zoom
     });
+
+    $('#locationBtn').click(function() {
+        var weatherLocation = $('#location').val();
+        geocode(weatherLocation, mapboxToken).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(9);
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+            getCurrentConditions(result[0], result[1]);
+            getFiveDayForecast(result[0], result[1]);
+        });
+    })
+
 
 
     getCurrentConditions(locationCoord[0], locationCoord[1]);
