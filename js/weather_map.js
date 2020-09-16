@@ -36,7 +36,6 @@
                 lat: lat,
                 units: "imperial"
             }).done(function (forecastWeather) {
-            // Testing if 5-day forecast is being gathered
             for (var i = 5; i <= 37; i += 8) {
                 var icon = 'http://openweathermap.org/img/wn/' + forecastWeather.list[i].weather[0].icon + '@2x.png'
                 $('#five-day-forecast').append(
