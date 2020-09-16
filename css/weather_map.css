@@ -1,4 +1,21 @@
 
-body {
-    background-color: #a6f5c6;
+
+#main-header {
+    border: #00338b solid 1px;
+}
+
+#current-weather {
+    border: #3B94D9 solid 1px;
+}
+
+#map-interface {
+    border: darkred solid 1px;
+}
+
+#five-day-forecast {
+    border: darkgreen solid 1px;
+}
+
+#each-day {
+    border: violet solid 1px;
 }

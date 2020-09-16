@@ -17,12 +17,14 @@
                 units: "imperial"
             }).done(function (currentWeather) {
             $('#current-weather').append(
-                "<p><b>Current conditions for " + currentWeather.name + ":  </b>Temp: " + currentWeather.main.temp + "&#8457  -  " +
-                "Feels like: " + currentWeather.main.feels_like + "&#8457  -  " +
-                "Description: " + currentWeather.weather[0].description +
-                "  -  Wind: " + currentWeather.wind.speed + "mph" +
-                "  -  Pressure: " + currentWeather.main.pressure + "hPa" +
-                "  -  Humidity: " + currentWeather.main.humidity + "%</p>"
+
+                "<p>Current conditions for <b>" + currentWeather.name + ":  </b></p>" +
+                "<p>Temp: " + currentWeather.main.temp + "&#8457 " +
+                "(Feels like: " + currentWeather.main.feels_like + "&#8457)</p>" +
+                "<p>" + currentWeather.weather[0].description + "</p>" +
+                "<p>Wind: " + currentWeather.wind.speed + "mph" + "</p>" +
+                "<p>Pressure: " + currentWeather.main.pressure + "hPa</p>" +
+                "<p>Humidity: " + currentWeather.main.humidity + "%</p>"
             );
         })
     }
@@ -40,15 +42,15 @@
             for (var i = 5; i <= 37; i += 8) {
                 var icon = 'http://openweathermap.org/img/wn/' + forecastWeather.list[i].weather[0].icon + '@2x.png'
                 $('#five-day-forecast').append(
-                    "<div class='col-2.8 card m-1'>" +
-                    "<h4 class='card-title'>" + forecastWeather.list[i].dt_txt.substring(0, 11) + "</h4>" +
-                    "<img class='card-img-top' src='" + icon + "'>" +
-                    "<div class='card-body'><p>" + forecastWeather.list[i].main.temp + "&#8457 / " + forecastWeather.list[i].main.feels_like + "&#8457</p>" +
+                    "<div id='each-day' class='col'>" +
+                    "<h4>" + forecastWeather.list[i].dt_txt.substring(0, 11) + "</h4>" +
+                    "<img src='" + icon + "'>" +
+                    "<p>" + forecastWeather.list[i].main.temp + "&#8457 / " + forecastWeather.list[i].main.feels_like + "&#8457</p>" +
                     "<p>" + forecastWeather.list[i].weather[0].description + "</p>" +
                     "<p>Wind: " + forecastWeather.list[i].wind.speed + "mph</p>" +
                     "<p>Pressure: " + forecastWeather.list[i].main.pressure + "hPa</p>" +
                     "<p>Humidity: " + forecastWeather.list[i].main.humidity + "%</p>" +
-                    "</div></div>"
+                    "</div>"
                 );
             }
         })
@@ -57,9 +59,9 @@
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
         center: [-98.4916, 29.4260], // starting position [lng, lat]
-        zoom: 0 // starting zoom
+        zoom: 9 // starting zoom
     });
 
     $('#locationBtn').click(function() {
