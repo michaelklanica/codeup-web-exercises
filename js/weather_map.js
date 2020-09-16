@@ -5,6 +5,11 @@
     getCurrentConditions(locationCoord[0], locationCoord[1]);
     getFiveDayForecast(locationCoord[0], locationCoord[1]);
 
+    $('#five-day-toggle').click(function() {
+        $('#five-day-forecast').slideToggle().css('display', 'flex');
+    });
+
+
 
     // Gather Current Weather
     function getCurrentConditions(lon, lat) {
@@ -18,13 +23,12 @@
             }).done(function (currentWeather) {
             $('#current-weather').append(
 
-                "<p>Current conditions for <b>" + currentWeather.name + ":  </b></p>" +
+                "<p>Current conditions for <b>" + currentWeather.name + "</b>:  " + currentWeather.weather[0].description.toUpperCase() + "</p>" +
                 "<p>Temp: " + currentWeather.main.temp + "&#8457 " +
-                "(Feels like: " + currentWeather.main.feels_like + "&#8457)</p>" +
-                "<p>" + currentWeather.weather[0].description + "</p>" +
-                "<p>Wind: " + currentWeather.wind.speed + "mph" + "</p>" +
-                "<p>Pressure: " + currentWeather.main.pressure + "hPa</p>" +
-                "<p>Humidity: " + currentWeather.main.humidity + "%</p>"
+                "(Feels like: " + currentWeather.main.feels_like + "&#8457) / " +
+                "Wind: " + currentWeather.wind.speed + "mph" + " / " +
+                "Pressure: " + currentWeather.main.pressure + "hPa / " +
+                "Humidity: " + currentWeather.main.humidity + "%</p>"
             );
         })
     }
@@ -44,7 +48,7 @@
                 $('#five-day-forecast').append(
                     "<div id='each-day' class='col'>" +
                     "<h4>" + forecastWeather.list[i].dt_txt.substring(0, 11) + "</h4>" +
-                    "<img src='" + icon + "'>" +
+                    "<img id='weather-image' src='" + icon + "'>" +
                     "<p>" + forecastWeather.list[i].main.temp + "&#8457 / " + forecastWeather.list[i].main.feels_like + "&#8457</p>" +
                     "<p>" + forecastWeather.list[i].weather[0].description + "</p>" +
                     "<p>Wind: " + forecastWeather.list[i].wind.speed + "mph</p>" +

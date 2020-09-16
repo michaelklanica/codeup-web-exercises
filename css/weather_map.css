@@ -1,21 +1,91 @@
-
+body {
+    background-color: #c4e8ff;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
 
 #main-header {
-    border: #00338b solid 1px;
+    margin: 10px 0;
+    text-align: center;
+    border: #262626 solid 5px;
+    border-radius: 10px;
+    background-color: #474747;
+    color: #c1ff91;
+
 }
 
 #current-weather {
-    border: #3B94D9 solid 1px;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
+    background-color: #474747;
+    color: #c1ff91;
+}
+
+.text-box {
+    margin: 3px;
+    padding: 8px;
+    border: #c1ff91 solid 2px;
+    border-radius: 10px;
+}
+
+.button {
+    margin: 3px;
+    padding: 8px;
+    border: #c1ff91 solid 2px;
+    border-radius: 10px;
+    background-color: #474747;
+    color: #c1ff91;
+}
+
+.button:hover {
+    background-color: #c1ff91;
+    color: #474747;
+}
+
+.button:active {
+
 }
 
 #map-interface {
-    border: darkred solid 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
+    background-color: #474747;
+    color: #c1ff91;
+}
+
+#map {
+    margin-top: 8px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
 }
 
 #five-day-forecast {
-    border: darkgreen solid 1px;
+    display: none;
+    margin-bottom: 10px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
+    background-color: #474747;
+    color: #c1ff91;
 }
 
 #each-day {
-    border: violet solid 1px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
+    background-color: #c1ff91;
+    color: #474747;
+}
+
+#weather-image {
+    background-color: #c4e8ff;
+    margin: 5px;
+    border: #262626 solid 5px;
+    border-radius: 10px;
 }
