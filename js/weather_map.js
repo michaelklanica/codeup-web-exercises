@@ -51,6 +51,14 @@
             }
         })
     }
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-98.4916, 29.4260], // starting position [lng, lat]
+        zoom: 0 // starting zoom
+    });
+
 
     getCurrentConditions(locationCoord[0], locationCoord[1]);
     getFiveDayForecast(locationCoord[0], locationCoord[1]);
