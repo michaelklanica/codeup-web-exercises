@@ -1,6 +1,7 @@
 body {
-    background-color: #c4e8ff;
+    background-color: #95d9ff;
     font-family: Helvetica, Arial, Sans-Serif;
+
 }
 
 #main-header {
@@ -10,7 +11,7 @@ body {
     border-radius: 10px;
     background-color: #474747;
     color: #c1ff91;
-
+    text-shadow: 0 0 3px #262626, 0 0 5px #ff8400;
 }
 
 #current-weather {
@@ -21,6 +22,7 @@ body {
     border-radius: 10px;
     background-color: #474747;
     color: #c1ff91;
+
 }
 
 .text-box {
@@ -84,7 +86,7 @@ body {
 }
 
 #weather-image {
-    background-color: #c4e8ff;
+    background-color: #95d9ff;
     margin: 5px;
     border: #262626 solid 5px;
     border-radius: 10px;
