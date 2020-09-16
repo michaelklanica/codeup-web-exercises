@@ -1,8 +1,9 @@
 "use strict";
 (function () {
 
-    let locationCoord = [-98.4916, 29.4260]; // Test Coordinates
-    console.log(locationCoord);
+    let locationCoord = [-98.4916, 29.4260]; // Default Coordinates
+    getCurrentConditions(locationCoord[0], locationCoord[1]);
+    getFiveDayForecast(locationCoord[0], locationCoord[1]);
 
 
     // Gather Current Weather
@@ -52,6 +53,7 @@
             }
         })
     }
+    // Set Map
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -61,22 +63,27 @@
     });
 
     $('#locationBtn').click(function() {
+
         var weatherLocation = $('#location').val();
         geocode(weatherLocation, mapboxToken).then(function(result) {
             console.log(result);
             map.setCenter(result);
             map.setZoom(9);
-            var marker = new mapboxgl.Marker()
+            var marker = new mapboxgl.Marker({
+                draggable: true
+            })
                 .setLngLat(result)
                 .addTo(map);
+
+            function onDragEnd() {
+                var lngLat = marker.getLngLat();
+                getCurrentConditions(lngLat.lng, lngLat.lat);
+                getFiveDayForecast(lngLat.lng, lngLat.lat);
+            }
+
+            marker.on('dragend', onDragEnd);
             getCurrentConditions(result[0], result[1]);
             getFiveDayForecast(result[0], result[1]);
         });
-    })
-
-
-
-    getCurrentConditions(locationCoord[0], locationCoord[1]);
-    getFiveDayForecast(locationCoord[0], locationCoord[1]);
-
+    });
 })();
