@@ -1,7 +1,7 @@
 "use strict";
 (function () {
-
-    let locationCoord = [-98.4916, 29.4260]; // Default Coordinates
+    // DEFAULT STARTING POINT
+    let locationCoord = [-98.4916, 29.4260];
     getCurrentConditions(locationCoord[0], locationCoord[1]);
     getFiveDayForecast(locationCoord[0], locationCoord[1]);
 
@@ -9,7 +9,14 @@
         $('#five-day-forecast').slideToggle().css('display', 'flex');
     });
 
-
+    // Set Map
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
+        center: [-98.4916, 29.4260], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
 
     // Gather Current Weather
     function getCurrentConditions(lon, lat) {
@@ -59,17 +66,9 @@
             }
         })
     }
-    // Set Map
-    mapboxgl.accessToken = mapboxToken;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
-        center: [-98.4916, 29.4260], // starting position [lng, lat]
-        zoom: 9 // starting zoom
-    });
+
 
     $('#locationBtn').click(function() {
-
         var weatherLocation = $('#location').val();
         geocode(weatherLocation, mapboxToken).then(function(result) {
             console.log(result);
