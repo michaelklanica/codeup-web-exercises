@@ -1,11 +1,11 @@
 "use strict";
 (function () {
     // DEFAULT STARTING POINT
-    let locationCoord = [-98.4916, 29.4260];
-    getCurrentConditions(locationCoord[0], locationCoord[1]);
+    let locationCoord = [-98.4916, 29.4260]; // STARTING COORD = SAN ANTONIO, TX
+    getCurrentConditions(locationCoord[0], locationCoord[1]);   //
     getFiveDayForecast(locationCoord[0], locationCoord[1]);
 
-    // Set Map
+    // SET MAP
     mapboxgl.accessToken = mapboxToken;
     var map = new mapboxgl.Map({
         container: 'map',
@@ -14,7 +14,7 @@
         zoom: 10 // starting zoom
     });
 
-    //creates a marker
+    // CREATE INITIAL MARKER
     let marker = new mapboxgl.Marker({
         draggable: true
     })
@@ -22,14 +22,34 @@
         .addTo(map);
     marker.on('dragend', onDragEnd);
 
+    // FUNCTION TO GET CURRENT CONDITIONS AND FORECAST AFTER MARKER 'DRAG'
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        getCurrentConditions(lngLat.lng, lngLat.lat);
+        getFiveDayForecast(lngLat.lng, lngLat.lat);
+        map.flyTo({center: [lngLat.lng, lngLat.lat], zoom: 10});
+    }
+
+    // LISTEN FOR 5-DAY FORECAST TOGGLE BUTTON CLICK EVENT
     $('#five-day-toggle').click(function () {
         $('#five-day-forecast').slideToggle().css('display', 'flex');
     });
 
+    // LISTEN FOR CITY SEARCH BUTTON CLICK EVENT
+    $('#locationBtn').click(function () {
+        var weatherLocation = $('#location').val();
+        geocode(weatherLocation, mapboxToken).then(function (result) {
+            map.flyTo({center: result, zoom: 10});
+            marker.setLngLat(result);
+            marker.on('dragend', onDragEnd);
+            getCurrentConditions(result[0], result[1]);
+            getFiveDayForecast(result[0], result[1]);
+        });
+    });
 
-    // Gather Current Weather
+    // FUNCTION TO GATHER CURRENT WEATHER CONDITIONS BY LON/LAT
     function getCurrentConditions(lon, lat) {
-        $('#current-weather').empty()
+        $('#current-weather').empty();
         $.get("https://api.openweathermap.org/data/2.5/weather",
             {
                 APPID: openWeatherKey,
@@ -45,10 +65,10 @@
                 "Pressure: " + currentWeather.main.pressure + "hPa / " +
                 "Humidity: " + currentWeather.main.humidity + "%</p>"
             );
-        })
+        });
     }
 
-    // Gather 5-Day Forecast
+    // FUNCTION TO GATHER 5-DAY FORECAST BY LON/LAT
     function getFiveDayForecast(lon, lat) {
         $('#five-day-forecast').empty();
         $.get("http://api.openweathermap.org/data/2.5/forecast",
@@ -72,24 +92,6 @@
                     "</div>"
                 );
             }
-        })
-    }
-
-    function onDragEnd() {
-        var lngLat = marker.getLngLat();
-        getCurrentConditions(lngLat.lng, lngLat.lat);
-        getFiveDayForecast(lngLat.lng, lngLat.lat);
-        map.flyTo({center: [lngLat.lng, lngLat.lat], zoom: 10});
-    }
-
-    $('#locationBtn').click(function () {
-        var weatherLocation = $('#location').val();
-        geocode(weatherLocation, mapboxToken).then(function (result) {
-            map.flyTo({center: result, zoom: 10});
-            marker.setLngLat(result)
-            marker.on('dragend', onDragEnd);
-            getCurrentConditions(result[0], result[1]);
-            getFiveDayForecast(result[0], result[1]);
         });
-    });
+    }
 })();
