@@ -6,7 +6,7 @@
 function getLastCommit(username) {
     const pushEvents =[];
     let url = 'https://api.github.com/users/' + username + '/events/public';
-    fetch(url, {headers: {'Authorization': 'token 10e52df073a787b7428b10c07204601983c8d137'}}).then(response => {
+    fetch(url, {headers: {'Authorization': gitToken}}).then(response => {
         response.json().then(events => {
             // console.log('array of all events: ', events);
             events.forEach(event => {
