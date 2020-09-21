@@ -26,7 +26,7 @@ getLastCommit('michaelklanica');
 
 function getLastCommit2 (username) {
     let url = ("https://api.github.com/users/" + username + "/events/public");
-    fetch(url, {headers: {'Authorization': 'token b5dc99563baece3d245c9f3d77c758155e8fbe5f'}})
+    fetch(url, {headers: {'Authorization': gitToken}})
         .then(response => response.json()
             .then(events => {
                 for(let i = 0; i < events.length; i++) {
@@ -38,4 +38,4 @@ function getLastCommit2 (username) {
             })
         )
 }
-getLastCommit2("alexandrahamner");
+getLastCommit2("michaelklanica");
