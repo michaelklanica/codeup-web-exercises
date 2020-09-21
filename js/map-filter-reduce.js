@@ -41,6 +41,10 @@ const moreThanThreeLangs = users.filter(function (user) {
     return user.languages.length >= 3;      // each time an instance meets this qualification it is added to the
                                             // 'moreThanThreeLangs' array.
 });
+//using arrow functions
+const moreThanThreeLanguages = users.filter( user => {return user.languages.length >= 3 });
+
+
 console.log(moreThanThreeLangs);            // logs the final array.
 
 // USING 'MAP'
@@ -48,6 +52,12 @@ const userEmailAddresses = users.map(function (user) {
     return user.email;
 });
 console.log(userEmailAddresses);
+
+//using arrow functions
+userEmails = users.map( user => user.email );
+
+
+
 
 // USING 'REDUCE'
 //#1
@@ -78,7 +88,7 @@ const usersString = users.reduce(function (accumulator, user) {
 console.log(usersString);
 
 // BONUS
-let languages = users.reduce(
+const allLanguages = users.reduce(
     (languages, user) => {
         for(let i = 0; i < user.languages.length; i++) {
             if (!languages.includes(user.languages[i])) {
@@ -87,13 +97,4 @@ let languages = users.reduce(
         }
         return languages;
     }, []);
-console.log(languages);
-
-
-
-// const listOfLangs = users.reduce(function (accumulator, user) {
-//     for(i = 0; i < user.languages.length; i++) {
-//         return accumulator + user.languages[i];
-//     }
-// });
-// console.log(listOfLangs);
+console.log(allLanguages);
